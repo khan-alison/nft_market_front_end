@@ -1,0 +1,292 @@
+.list-for-sale-modal {
+  padding: 36px;
+
+  @media only screen and (max-width: $breakpoint_tablet_max) {
+    padding: 36px 20px;
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: 0.015em;
+    color: $color_tango;
+    margin-bottom: 46px;
+
+    @media only screen and (max-width: $breakpoint_tablet_max) {
+      font-size: 24px;
+      line-height: 36px;
+      margin-bottom: 34px;
+    }
+  }
+
+  .list-for-sale-modal-preview {
+    height: 434px;
+
+    @media only screen and (max-width: $breakpoint_tablet_max) {
+      height: 328px;
+      margin-bottom: 24px;
+    }
+
+    .ant-image {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .ant-image-img {
+      height: 100%;
+    }
+  }
+
+  .list-for-sale-modal-form {
+    padding-left: 30px;
+    position: relative;
+
+    @media only screen and (max-width: $breakpoint_tablet_max) {
+      padding-left: 0px;
+    }
+
+    .form {
+      &__name {
+        font-family: $aero;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 21px;
+        color: $color_white;
+
+        @media only screen and (max-width: $breakpoint_tablet_max) {
+          font-size: 20px;
+          line-height: 18px;
+        }
+      }
+
+      &__token {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 25px;
+        color: $color_athens_gray;
+
+        @media only screen and (max-width: $breakpoint_tablet_max) {
+          margin-bottom: 18px;
+        }
+      }
+    }
+
+    &__input {
+      margin-top: 24px;
+
+      .ant-input {
+        padding: 4px 45px 4px 11px;
+      }
+    }
+
+    .price-usd {
+      display: flex;
+      justify-content: flex-end;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: $color_athens_gray;
+    }
+
+    .form-item {
+      display: flex;
+      justify-content: space-between;
+
+      &__label {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        text-transform: capitalize;
+        color: $color_white;
+        padding-top: 10px;
+
+        @media only screen and (max-width: $breakpoint_tablet_max) {
+          font-size: 16px;
+          line-height: 19px;
+        }
+      }
+
+      .field {
+        flex: 1;
+        max-width: 232px;
+
+        .ant-input {
+          height: 45px;
+          border-radius: 5px;
+
+          &::placeholder {
+            padding-top: 4px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            text-transform: capitalize;
+            color: $color_athens_gray;
+          }
+        }
+      }
+    }
+
+    .field {
+      position: relative;
+
+      &__currency {
+        position: absolute;
+        right: 10px;
+        top: 14px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: $color_titan_white;
+      }
+
+      &__button {
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        height: 30px;
+        background: $color_smalt;
+        border-radius: 5px;
+      }
+    }
+
+    .item-with-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 30px;
+
+      .label {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;
+        color: $color_white;
+      }
+
+      .content {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        text-transform: capitalize;
+        color: $color_white;
+
+        .column {
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 24px;
+
+          .label {
+            color: $color_tango;
+            display: flex;
+            justify-content: flex-end;
+
+            .text {
+              color: $color_tango;
+              opacity: 0.5;
+            }
+          }
+
+          .content {
+            display: flex;
+            justify-content: flex-end;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: $color_athens_gray;
+          }
+        }
+      }
+
+      .currency {
+        display: inline-flex;
+        flex-direction: column;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        text-transform: capitalize;
+        color: $color_tango;
+
+        &__symbol {
+          opacity: 0.5;
+          margin-left: 5px;
+        }
+
+        &__top {
+          display: inline-flex;
+
+          img {
+            margin-right: 8px;
+          }
+        }
+
+        &__price {
+          text-align: right;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 21px;
+          letter-spacing: 0.015em;
+          color: $color_white;
+        }
+      }
+    }
+
+    .group-button {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 30px;
+
+      @media only screen and (max-width: $breakpoint_tablet_max) {
+        position: unset;
+        margin-top: 45px;
+      }
+
+      .button {
+        width: 100%;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        text-transform: capitalize;
+        color: $color_white;
+
+        &--first {
+          background: $color_sorbus;
+          border-radius: 5px;
+          margin-bottom: 18px;
+        }
+
+        &--second {
+          background: $color_shuttle_gray;
+          border-radius: 5px;
+        }
+
+        &--processed {
+          background: $color_sorbus;
+        }
+      }
+
+      &__error-text {
+        margin-top: 4px;
+      }
+    }
+  }
+}
+
+.list-for-sale-successful-description {
+  @media only screen and (max-width: $breakpoint_tablet_max) {
+    padding: 103px 45px;
+  }
+
+  img {
+    @media only screen and (max-width: $breakpoint_tablet_max) {
+      margin-bottom: 40px;
+    }
+  }
+}

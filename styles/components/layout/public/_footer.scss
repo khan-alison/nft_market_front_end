@@ -1,0 +1,154 @@
+.app-footer {
+  background: #17232f;
+  margin-top: 5.625rem;
+
+  @media only screen and (max-width: $breakpoint_tablet_max) {
+    margin-top: 2.375rem;
+  }
+
+  .footer-background {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    width: 100%;
+    height: 118px;
+    margin-top: 125px;
+
+    @media only screen and (max-width: $breakpoint_tablet_max) {
+      margin-top: 40px;
+    }
+  }
+
+  &__body {
+    height: 242px;
+    padding: 30px 0;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.005em;
+
+    @media only screen and (max-width: $breakpoint_tablet_max) {
+      height: auto;
+      font-size: 14px;
+      line-height: 28px;
+      padding: 15px 24px;
+    }
+
+    .app-logo {
+      margin-bottom: 35px;
+      border-radius: 50%;
+      @media only screen and (max-width: $breakpoint_tablet_max) {
+        width: 160px;
+        height: 30px;
+        margin-bottom: 16px;
+      }
+    }
+
+    .logo-title {
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 13px;
+      margin-bottom: 1.5rem;
+
+      @media only screen and (max-width: $breakpoint_tablet_max) {
+        margin-bottom: 2.75rem;
+      }
+    }
+
+    .title {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 26px;
+      text-transform: uppercase;
+      color: white;
+      padding-bottom: 20px;
+
+      @media only screen and (max-width: $breakpoint_tablet_max) {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: capitalize;
+      }
+    }
+
+    .contact {
+      display: flex;
+
+      &__icon {
+        padding-right: 5px;
+      }
+    }
+
+    .ant-col {
+      @media only screen and (max-width: $breakpoint_tablet_max) {
+        width: 100%;
+      }
+    }
+
+    .about {
+      display: flex;
+      flex-direction: column;
+
+      @media only screen and (max-width: $breakpoint_tablet_max) {
+        padding-bottom: 8px;
+      }
+    }
+
+    .app-button {
+      padding-bottom: 10px;
+    }
+
+    .description {
+      max-width: 270px;
+      padding-bottom: 20px;
+
+      @media only screen and (max-width: $breakpoint_tablet_max) {
+        padding-top: 14px;
+      }
+
+      &__group-icon {
+        display: flex;
+
+        .icon {
+          padding-right: 15px;
+        }
+      }
+    }
+
+    a {
+      color: white;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 13px;
+      margin-bottom: 24px;
+
+      @media only screen and (max-width: $breakpoint_tablet_max) {
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 13px;
+      }
+    }
+
+    .ecosystem {
+      margin-bottom: 24px;
+    }
+  }
+
+  .copy-right {
+    padding: 8px 0;
+    background-color: #111c27;
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+
+    @media only screen and (max-width: $breakpoint_tablet_max) {
+      height: 32px;
+      font-size: 12px;
+      color: $color_mischka;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

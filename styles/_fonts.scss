@@ -1,0 +1,62 @@
+// font
+$aero: 'Aero';
+$helvetica: 'Helvetica';
+$bebas_neue: 'Bebas Neue';
+$amore_dreaming: 'Amore Dreaming Sans Serif';
+$poppin: 'Poppins';
+
+@font-face {
+  font-family: $aero;
+  src: url('../public/fonts/Aero.ttf');
+}
+
+@font-face {
+  font-family: $helvetica;
+  src: url('../public/fonts/Helvetica.ttf');
+}
+
+@font-face {
+  font-family: $bebas_neue;
+  src: url('../public/fonts/BebasNeue-Regular.ttf');
+}
+
+@font-face {
+  font-family: $amore_dreaming;
+  src: url('../public/fonts/Amore-Dreaming.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: $poppin;
+  src: url('../public/fonts/Poppins-Bold.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: $poppin;
+  src: url('../public/fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: $poppin;
+  src: url('../public/fonts/Poppins-Medium.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: $poppin;
+  src: url('../public/fonts/Poppins-Regular.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: $poppin;
+  src: url('../public/fonts/Poppins-Light.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 300;
+  font-style: normal;
+}

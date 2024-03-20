@@ -1,0 +1,9 @@
+version: "3.5"
+
+services:
+  fe-user:
+    container_name: fe-user
+    restart: always
+    image: registry.gitlab.com/nft-marketplace-with-social-login/frontend-user:dev
+    ports:
+      - "3002:3002"

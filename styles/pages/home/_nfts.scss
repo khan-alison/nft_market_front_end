@@ -1,0 +1,253 @@
+.nft-detail-page {
+  .general__preview {
+    padding-right: 2rem;
+
+    .media__audio {
+      position: relative;
+      max-height: 600px;
+      overflow: hidden;
+
+      .image {
+        width: 100%;
+      }
+
+      .styles_audioPlayer__HOR7S {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+    }
+
+  }
+
+  .general__info {
+    .nft-detail-content {
+      .nft-detail-head {
+        display: flex;
+        justify-content: space-between;
+
+        .title-collection {
+          font-weight: 700;
+          font-size: 24px;
+          color: #FFFFFF;
+          padding-right: 10px;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .feature {
+
+        .feature-item,
+        .feature-item-unlock {
+          align-items: center;
+          padding: 5px 16px 5px 14px;
+          background: rgba(221, 68, 96, 0.2);
+          border-radius: 3px;
+          margin-right: 8px;
+        }
+
+        .feature-item-unlock {
+          color: #DD4460;
+        }
+      }
+
+      .avatar {
+        display: flex;
+        align-items: center;
+        padding: 1rem 0;
+
+        .avatar-info {
+          padding-left: 12px;
+
+          p:nth-child(1) {
+            color: #848C9C;
+          }
+
+          p:nth-child(2) {
+            font-weight: 600;
+            font-size: 16px;
+            color: #FFFFFF;
+          }
+        }
+      }
+
+      .statistical {
+        color: #C6CBD8;
+        padding-bottom: 16px;
+      }
+
+      .price {
+        span {
+          font-weight: 700;
+          font-size: 24px;
+        }
+
+        .price-item {
+          color: #DD4460;
+          background: rgba(221, 68, 96, 0.2);
+          padding: 5px;
+          border-radius: 2px;
+          margin-left: 8px;
+          font-weight: 700;
+          font-size: 14px;
+        }
+      }
+
+      .gr-btn {
+        display: flex;
+        margin: 1rem 0;
+
+        .btn-buy {
+          background: #DD4460;
+          border-radius: 3px;
+          align-items: center;
+          padding: 16px 24px;
+          width: 340.5px;
+          height: 52px;
+          font-weight: 600;
+          color: #FFFFFF;
+          margin-right: 12px;
+          border: none;
+        }
+
+        .btn-offer {
+          color: #DD4460;
+          background: none;
+          padding: 16px 24px;
+          width: 340.5px;
+          height: 52px;
+          border: 1px solid #DD4460;
+        }
+      }
+
+      .owners-tab {
+        .owners-tab-item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+
+          .owners-item-content {
+            display: flex;
+            align-items: center;
+
+            .owners-info {
+              padding-left: 12px;
+
+              p:nth-child(2) {
+                color: #848C9C;
+              }
+
+              p:nth-child(1) {
+                font-weight: 600;
+                font-size: 16px;
+                color: #FFFFFF;
+              }
+            }
+          }
+
+          &:hover {
+            .btn-buy {
+              display: block;
+            }
+          }
+
+          .btn-buy {
+            display: none;
+            background: #DD4460;
+            border-radius: 3px;
+            align-items: center;
+            padding: 0 16px;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-right: 12px;
+            border: none;
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+.loading-meta-mark {
+  .loading-content {
+    height: 150px;
+    display: flex;
+    padding-top: 3rem;
+    justify-content: center;
+
+    .ant-spin-nested-loading>div>.ant-spin {
+      background: #17232f;
+
+       .ant-spin-dot {
+        width: 80px;
+        position: initial;
+        height: 80px
+      }
+    }
+  }
+
+}
+
+.payment-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  color: #FFFFFF !important;
+}
+
+.modal-payment {
+  color: #FFFFFF;
+
+  .payment-content {
+    width: 100%;
+
+    .payment-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 0;
+
+      .payment-item-content {
+        display: flex;
+
+        p {
+          max-width: 178px;
+        }
+      }
+
+      &__title {
+        font-weight: 700;
+      }
+
+      &__price span {
+        color: #C6CBD8;
+        font-size: 14px;
+      }
+    }
+
+    .payment-form__input {
+      .field {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+
+    .payment-discount {
+      .ant-select-selector {
+        width: 100%;
+
+      }
+    }
+
+    .payment-btn {
+      width: 100%;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+}

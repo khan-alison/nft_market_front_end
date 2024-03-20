@@ -1,0 +1,13 @@
+.no-data {
+  text-align: center;
+  margin-top: 100px;
+
+  &__text {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 30px;
+    letter-spacing: 0.015em;
+    color: $color_trout;
+    margin-top: 38px;
+  }
+}

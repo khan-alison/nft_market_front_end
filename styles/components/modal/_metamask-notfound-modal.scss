@@ -1,0 +1,81 @@
+.connect-wallet-modal {
+  .ant-modal-content {
+    width: 538px;
+    border-radius: 10px;
+
+    @media screen and (max-width: $breakpoint_tablet_max) {
+      width: 100%;
+    }
+
+    .ant-modal-body {
+      padding: 48px 74px;
+
+      @media screen and (max-width: $breakpoint_tablet_max) {
+        padding: 85px 15px;
+      }
+
+      .metamask-notfound-modal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media screen and (max-width: $breakpoint_tablet_max) {
+          padding: 77px 10px;
+        }
+
+        .title {
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 28px;
+          text-align: center;
+          letter-spacing: 0.015em;
+          color: $color_teak;
+          padding-bottom: 12px;
+          margin-bottom: 0px;
+
+          @media screen and (max-width: $breakpoint_tablet_max) {
+            font-size: 24px;
+          }
+        }
+
+        .sub-title {
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 21px;
+          text-align: center;
+          color: $color_iron;
+          padding-bottom: 32px;
+
+          @media screen and (max-width: $breakpoint_tablet_max) {
+            font-size: 14px;
+          }
+        }
+
+        .logo {
+          width: 52px;
+          height: 48px;
+          margin-bottom: 20px;
+        }
+
+        .footer {
+          display: flex;
+          justify-content: center;
+          padding-top: 16px;
+
+          img {
+            margin-right: 8px;
+          }
+
+          a {
+            letter-spacing: 0.015em;
+            text-transform: capitalize;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 22px;
+            color: $color_hibiscus;
+          }
+        }
+      }
+    }
+  }
+}

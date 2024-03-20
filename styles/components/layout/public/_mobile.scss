@@ -1,0 +1,311 @@
+.mobile-drawer {
+  // background-image: url('../../../../public/images/content_background.png');
+  background-repeat: no-repeat;
+
+  &.notification {
+    .ant-drawer-header {
+      .ant-drawer-title {
+        .header-menu {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .mark-notification {
+            display: inline-flex;
+            align-items: center;
+
+            .title {
+              padding-left: 0;
+              font-weight: 700;
+              font-size: 16px;
+              line-height: 26px;
+            }
+
+            button {
+              height: 30px;
+              text-transform: none;
+              font-weight: 600;
+              font-size: 12px;
+              line-height: 12px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+
+    .ant-drawer-body {
+      display: block;
+
+      .notification-card {
+        max-width: 100% !important;
+
+        .infinite-scroll-component {
+          margin-top: 30px;
+          max-height: 570px;
+
+          .group {
+            border-bottom: none;
+
+            .effect {
+              .mobile-dot {
+                margin: 0 12px;
+                background-color: transparent;
+
+                &.unread-dot {
+                  background-color: #c1296a;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ant-drawer-content-wrapper {
+    width: 100% !important;
+  }
+
+  .ant-drawer-content {
+    padding: 12px 22px;
+  }
+
+  .ant-drawer-header,
+  .ant-drawer-content {
+    background-color: #111c27;
+  }
+
+  .ant-drawer-header {
+    border-bottom: unset;
+    padding-bottom: 0;
+    padding: inherit;
+
+    .ant-drawer-title {
+      color: white;
+
+      .header-menu {
+        padding-top: 24px;
+
+        .menu {
+          margin-top: 28px;
+
+          .item {
+            margin-bottom: 36px;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 27px;
+            color: #c8cacc;
+
+            a,
+            a:hover,
+            a:active,
+            a:focus {
+              color: #c8cacc;
+              font-weight: 500;
+              font-size: 18px;
+              line-height: 27px;
+            }
+
+            .locking {
+              position: relative;
+              padding-bottom: 20px;
+            }
+
+            .collab {
+              text-transform: capitalize;
+              font-style: italic;
+              line-height: 10px;
+              font-size: 10px;
+              position: absolute;
+              top: 30px;
+            }
+
+            .app-header__collab-icon {
+              height: 9px;
+              width: auto;
+              margin: 2px;
+            }
+
+            .ant-menu {
+              background: none;
+              border-right: none;
+              color: #c8cacc;
+              font-weight: 500;
+              font-size: 18px;
+              line-height: 27px;
+
+              &-item {
+                padding-left: 20px !important;
+
+                &-selected {
+                  background-color: inherit;
+                }
+
+                &::after {
+                  border-right: none;
+                }
+              }
+
+              .ant-menu-submenu {
+                &-title {
+                  padding: 0;
+                  padding-left: 0px !important;
+                }
+
+                &-open,
+                &-active,
+                &-selected,
+                &-arrow,
+                &-title:hover {
+                  color: #c8cacc;
+                  font-weight: 500;
+                  font-size: 18px;
+                  line-height: 27px;
+                }
+
+                &-title:active {
+                  background: none;
+                }
+              }
+            }
+          }
+        }
+
+        .close-btn {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        }
+      }
+
+      .header-overlay {
+        padding-top: 24px;
+
+        .user_type-kyc {
+          padding-bottom: 24px;
+
+          .kyc-status__box {
+            margin-right: 32px;
+            margin-left: 0;
+          }
+
+          span {
+            padding-bottom: 0;
+          }
+        }
+
+        .status-close_container {
+          display: flex;
+          align-items: center;
+        }
+
+        .account-button {
+          padding-bottom: 44px;
+        }
+
+        a {
+          .item {
+            border-bottom: none;
+
+            span {
+              font-weight: 500;
+              font-size: 18px;
+              line-height: 27px;
+              color: #c8cacc;
+              padding-top: 0;
+              padding-bottom: 36px;
+              text-transform: capitalize;
+            }
+          }
+
+          &:last-child {
+            .item span {
+              padding-bottom: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ant-drawer-body {
+    display: flex;
+    align-items: flex-end;
+    padding: inherit;
+    margin-bottom: 55px;
+
+    .connect-wallet-mobile {
+      width: 100%;
+    }
+
+    .disconnect {
+      padding-left: 10px;
+    }
+  }
+}
+
+.menu-mobile {
+  // .app-address {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   font-weight: 400;
+  //   font-size: 16px;
+  //   line-height: 21px;
+  //   padding: 12px 0px;
+  //   letter-spacing: 0.015em;
+  //   margin-bottom: 24px;
+  //   // color: $color_tango;
+  //   border: 1px solid rgba(255, 255, 255, 0.1);
+
+  //   .ant-typography {
+  //     margin-left: 13px;
+  //   }
+  // }
+
+  .menu {
+    padding: 16px;
+    border-radius: 5px 5px 0px 0px;
+
+    :nth-child(3) {
+      border-bottom: unset !important;
+    }
+
+    .item {
+      padding: 14px 0px;
+      border-bottom: 1px solid $color_white_0_1;
+
+      span {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 21px;
+        letter-spacing: 0.015em;
+        color: $color_titan_white;
+      }
+
+      img {
+        margin-right: 12px;
+      }
+    }
+  }
+}
+
+.mobile-header {
+  &__icon.menu-icon {
+    padding-left: 23px;
+  }
+}
+
+@media only screen and (max-width: $breakpoint_mobile_sm) {
+  .mobile-drawer {
+    .ant-drawer-header .ant-drawer-title .header-overlay {
+      .user_type-kyc {
+        .kyc-status__box {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.create-nft-page {
+  .creation-nft {
+    padding: 30px 0;
+    background-color: #111c27;
+
+    .creation--title .ant-typography {
+      color: #ffffff;
+      font-weight: 400;
+      margin-bottom: 0;
+      font-family: "Amore Dreaming Sans Serif";
+      font-size: 28px;
+      letter-spacing: 0.03em;
+      line-height: 37px;
+    }
+
+    .creation--block {
+      border-radius: 8px;
+      background-color: #17232f;
+      padding: 20px;
+
+      .creation-nft-form {
+        .form-item {
+          height: initial;
+        }
+
+        .ant-upload.ant-upload-drag {
+          background-color: initial;
+
+          .ant-image-img {
+            max-height: 450px;
+          }
+
+          .dragger__icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 10;
+          }
+
+          .dragger__label,
+          .dragger__text {
+            color: #ffffff;
+          }
+        }
+
+        .attribute-group {
+          padding: 20px 0 8px;
+          margin-top: 20px;
+          border-top: 1px dashed #d9d9d9;
+          
+          .attribute-btn--add {
+            background: none;
+            color: #ffffff;
+          }
+
+          .input-attribute {
+          margin: 20px 0 8px;
+            width: 100%;
+            background: #111c27;
+            color: #ffffff;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 21px;
+            letter-spacing: 0.015em;
+            border: 1px solid #0f2043;
+            height: 40px;
+            padding: 11px 15px;
+            border-radius: 5px;
+          }
+        }
+      }
+
+      .submit-btn {
+        margin-top: 1rem;
+        text-align: center;
+      }
+    }
+  }
+}

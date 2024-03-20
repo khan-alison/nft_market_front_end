@@ -1,0 +1,14 @@
+.app-drawer {
+  .ant-drawer-header {
+    display: none;
+  }
+
+  .ant-drawer-body {
+    padding: 0px;
+    background: $color_firefly_linear;
+  }
+
+  .ant-drawer-content-wrapper {
+    max-height: 75%;
+  }
+}

@@ -1,0 +1,48 @@
+.app-tab {
+  .ant-tabs-tab {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.015em;
+  }
+
+  .ant-tabs-tab-btn {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0.015em;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: $helvetica;
+  }
+
+  .ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: $color_tango;
+    border-bottom: 1px solid $color_tango;
+  }
+
+  .ant-tabs-nav {
+    margin: 0px;
+
+    &::before {
+      display: none;
+    }
+
+    @media screen and (max-width: $breakpoint_small_tablet_max) {
+      flex-direction: column;
+    }
+
+    .ant-tabs-extra-content {
+      @media screen and (max-width: $breakpoint_small_tablet_max) {
+        width: 100%;
+      }
+    }
+  }
+
+  .ant-tabs-ink-bar-animated {
+    display: none;
+  }
+
+  .page-content {
+    border-top-left-radius: 0px;
+  }
+}

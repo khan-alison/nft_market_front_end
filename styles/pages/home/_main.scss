@@ -1,0 +1,14 @@
+@import './banner';
+@import './nfts';
+@import './collection';
+@import './blog';
+@import './digitalwork';
+@import './outstanding';
+@import './twitter';
+@import './question';
+
+.home-page-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+}

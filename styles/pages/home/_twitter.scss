@@ -1,0 +1,33 @@
+.twitter-embed-section {
+  margin-top: 4.525rem;
+
+  .twitter-box-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 44px;
+
+    @media only screen and (max-width: $breakpoint_tablet_sm) {
+      display: block;
+    }
+
+    .title {
+      font-family: $amore_dreaming;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 37px;
+      letter-spacing: 0.03em;
+      color: #b38465;
+    }
+  }
+
+  .twitter-timeline-rendered {
+    border-radius: 12px;
+    background-color: #17232f;
+
+    @media only screen and (max-width: 348px) {
+      background-color: transparent;
+    }
+  }
+}

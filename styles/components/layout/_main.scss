@@ -1,0 +1,47 @@
+@import './public/main';
+
+.app-layout {
+  height: 100%;
+
+  .ant-layout-sider-trigger {
+    display: none;
+  }
+}
+
+.my-account-layout {
+  padding-top: 4.5rem;
+
+  .my-account-sider {
+    &__top {
+      padding: 1rem;
+    }
+    &__menu {
+      border: none;
+      .ant-menu-item-selected {
+        background-color: #825f1b;
+      }
+    }
+
+    .ant-menu {
+      background: none;
+
+      .ant-menu-inline {
+        border: none;
+      }
+
+      .my-account-sider__menu--item {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #fff;
+      }
+    }
+  }
+
+  .ant-layout {
+    background-color: #021f54;
+  }
+
+  .ant-layout-sider-trigger {
+    display: none;
+  }
+}

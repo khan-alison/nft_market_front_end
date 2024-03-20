@@ -1,0 +1,87 @@
+// size screen responsive
+// Small devices (landscape phones, 576px and up)
+// Extra large devices (large desktops, 1200px and up)
+// Large devices (desktops, 992px and up)
+// Medium devices (tablets, 768px and up)
+$breakpoint_mobile_sm: 280px;
+$breakpoint_mobile_md: 375px;
+$breakpoint_mobile_lg: 465px;
+$breakpoint_mobile_max: 575px;
+$breakpoint_tablet_sm: 767px;
+$breakpoint_tablet_md: 820px;
+$breakpoint_tablet_lg: 912px;
+$breakpoint_tablet_max: 991px;
+$breakpoint_small_tablet_max: 1024px;
+$breakpoint_laptop_min: 1280px;
+$breakpoint_laptop_max: 1439px;
+$breakpoint_desktop_min: 1599px;
+$breakpoint_desktop_max: 1919px;
+
+//color
+$color_transparent: rgba(255, 255, 255, 0);
+$color_white: #fff;
+$color_black: #000;
+$color_alto: #cecece;
+$color_tango: #ef7224;
+$color_trout: #4e535e;
+$color_firefly: #070d1d;
+$color_mischka: #d8d5db;
+$color_mariner: #217abc;
+$color_big_stone: #172849;
+$color_downriver: #0a1c40;
+$color_french_rose: #ef466f;
+$color_titan_white: #e7e9ff;
+$color_athens_gray: #e6e8ec;
+$color_oxford_blue: #303b4e;
+$color_blue_zodiac: #0f2043;
+$color_storm_gray: #676a89;
+$color_regal_blue: #004666;
+$color_white_0_1: #ffffff1a;
+$color_white_0_2: #ffffff33;
+$color_white_0_3: #ffffff4d;
+$color_white_0_5: #ffffff80;
+$color_mischka_0_3: #d8d5db59;
+$color_black_0_5: #00000080;
+$color_blue_charcoal_0_6: #020c1d99;
+$color_big_stone_0_7: #172849b3;
+$color_lightning_yellow_0_85: #ffc411d9;
+$color_tuna: #31303e;
+$color_scarlet: #ff2f00;
+$color_rock_blue: #9facc9;
+$color_curious_blue: #29a2e2;
+$color_black_pearl: #030e24;
+$color_blue_bayoux: #4d5979;
+$color_lima: #5ee83c;
+$color_lima_0_3: #5ee83c4d;
+$color_sunset_orange_0_3: #fc4f464d;
+$color_blue_0: #17232f;
+$color_blue_bayoux_linear: linear-gradient(180deg, #4d5979 0%, rgba(77, 89, 121, 0) 100%);
+// $primary_color_button: linear-gradient(184.5deg, #1d92c5 2.85%, #365eaf 95.55%);
+$primary_color_button: #c1296a;
+$color_black_pearl_linear: linear-gradient(180deg, #081030 0%, #18223c 100%);
+$color_smalt: linear-gradient(180deg, #217abc 0%, #00388b 100%);
+$color_amber: linear-gradient(180deg, #ff9900 0%, #ffa800 54.69%, #ffc301 100%);
+$color_firefly_linear: linear-gradient(272.03deg, #0e2148 1.85%, #0b162e 101.27%);
+$color_black_pearl_linear_0_8: linear-gradient(319.92deg, rgba(12, 28, 60, 0.8) 24.52%, rgba(9, 14, 27, 0.8) 78.9%);
+$color_santas_gray: linear-gradient(180deg, #969cb4 0%, rgba(55, 53, 85, 0.4) 100%);
+$color_fire: linear-gradient(180deg, #ff810d 0%, #b44704 100%);
+$color_yellow_fire: linear-gradient(180deg, #f0af2c 0%, #84611c 100%);
+$color_sorbus: linear-gradient(180deg, #fb7e0c 0%, #b84a04 100%);
+$color_rose_of_sharon: linear-gradient(180deg, #fa7d0c 0%, #be4e05 100%);
+
+// new
+$color_white: #ffffff;
+$color_mirage: #111c27;
+$color_ebony_clay: #24303c;
+$color_shuttle_gray: #51606f;
+$color_blue_bayoux: #516172;
+$color_mirage_approx: #17232f;
+$color_silver_hand: #c8cacc;
+$color_teak: #b38465;
+$color_hibiscus: #c1296a;
+$color_iron: #e1e3e6;
+$color_curious_blue: #1f88e7;
+$color_cerise_red: #e12860;
+$color_butter_cup: #f3b821;
+$color_green_haze: #00b140;
+$color_salmon: #ff7676;

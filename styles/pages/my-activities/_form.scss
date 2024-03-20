@@ -1,0 +1,65 @@
+.my-activities-page-form {
+  display: flex;
+  align-items: center;
+  margin-top: 36px;
+
+  .col-reset {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+  @media only screen and (max-width: $breakpoint_tablet_max) {
+    .ant-col {
+      margin: 4px 0px;
+    }
+
+    .reset-icon {
+      flex: 1;
+      text-align: right;
+    }
+  }
+
+  .ant-input-affix-wrapper {
+    height: 45px;
+    padding: 12px 20px;
+
+    .ant-input {
+      background: transparent;
+
+      &::placeholder {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: 0.015em;
+        color: $color_white;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .ant-picker {
+    height: 45px;
+    padding: 12px 20px;
+    width: 100%;
+  }
+
+  .ant-select .ant-select-selector {
+    background: $color_black_pearl;
+    border-radius: 50px;
+    padding: 12px 20px;
+    overflow: hidden;
+  }
+
+  .ant-select-selection-placeholder {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .ant-select .ant-select-selection-item {
+    color: $color_white;
+  }
+
+  .ant-select .ant-select-arrow {
+    color: $color_white !important;
+  }
+}

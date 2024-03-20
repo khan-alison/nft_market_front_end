@@ -1,0 +1,186 @@
+// default
+$color_default_button_background: $primary_color_button;
+$color_default_button: $color_white;
+
+// link
+$color_link_button_background: $color_transparent;
+$color_link_button: white;
+
+// primary
+$color_primary_button_background: $primary_color_button;
+$color_primary_button: $color_white;
+
+// secondary
+$color_secondary_button_background: $color_tango;
+$color_secondary_button: $color_white;
+
+.ant-btn {
+  padding: 5px 10px;
+}
+
+.ant-btn:hover {
+  opacity: 0.8;
+}
+
+.button {
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border-radius: 3px;
+  border: none;
+  text-transform: uppercase;
+
+  &:focus,
+  &:active,
+  &:hover {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  &--default {
+    background: $color_hibiscus;
+    color: $color_white;
+    @media only screen and (max-width: 600px) {
+      margin-bottom: 1rem;
+    }
+    &:focus,
+    &:active,
+    &:hover {
+      color: $color_white;
+      background: $color_hibiscus;
+      opacity: 0.8;
+    }
+
+    &:disabled {
+      color: $color_silver_hand;
+      background: $color_shuttle_gray;
+      opacity: 1;
+      &:focus,
+      &:active,
+      &:hover {
+        color: $color_silver_hand;
+        background: $color_shuttle_gray;
+      }
+    }
+  }
+
+  &--link {
+    background-color: $color_link_button_background;
+    color: $color_link_button;
+    border: 0.5px solid white;
+    border-radius: 3px;
+
+    &:focus,
+    &:active,
+    &:hover {
+      color: $color_link_button;
+      background-color: $color_link_button_background;
+      border: 0.5px solid white;
+    }
+
+    &:disabled {
+      border: none;
+      color: $color_link_button;
+    }
+  }
+
+  &--primary {
+    background: $color_primary_button_background;
+    color: $color_primary_button;
+
+    &:focus,
+    &:active,
+    &:hover {
+      background: $color_primary_button_background;
+      color: $color_primary_button;
+    }
+
+    &:disabled {
+      background: $color_primary_button_background;
+      color: $color_primary_button;
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    color: $color_hibiscus;
+    border: 1px solid $color_hibiscus;
+    border-radius: 3px;
+
+    &:focus,
+    &:active,
+    &:hover {
+      color: $color_hibiscus;
+      border-color: $color_hibiscus;
+      background: transparent;
+      opacity: 0.8;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  &--light {
+    color: $color_white;
+    border: 1px solid $color_blue_bayoux;
+    background-color: transparent;
+    &:focus,
+    &:active,
+    &:hover {
+      color: $color_white;
+      background-color: transparent;
+      border-color: $color_blue_bayoux;
+      opacity: 0.8;
+    }
+  }
+
+  &--dark {
+    color: $color_white;
+    border: 1px solid $color_blue_bayoux;
+    margin-right: 1rem;
+    background: transparent !important;
+    &:focus,
+    &:active,
+    &:hover {
+      color: $color_white;
+      background: transparent !important;
+      border-color: $color_blue_bayoux;
+      opacity: 0.8;
+    }
+  }
+
+  &--transparent {
+    background-color: transparent;
+    color: $color_iron;
+    padding: 0;
+
+    &:focus,
+    &:active,
+    &:hover {
+      color: $color_iron;
+      background: transparent;
+      opacity: 0.8;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      background-color: transparent;
+      &:focus,
+      &:active,
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
+}

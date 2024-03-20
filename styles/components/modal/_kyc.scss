@@ -1,0 +1,121 @@
+.kyc-modal {
+  .ant-modal-content {
+    width: 538px;
+    border-radius: 15px;
+    background: $color_mirage_approx;
+
+    @media screen and (max-width: $breakpoint_tablet_max) {
+      width: 100%;
+    }
+
+    .ant-modal-body {
+      padding: 48px 74px;
+
+      @media screen and (max-width: $breakpoint_tablet_max) {
+        padding: 24px;
+      }
+
+      .kyc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (max-width: $breakpoint_tablet_max) {
+          padding: 90px 10px;
+        }
+
+        .title {
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 28px;
+          text-align: center;
+          letter-spacing: 0.015em;
+          color: $color_teak;
+
+          @media screen and (max-width: $breakpoint_tablet_max) {
+            font-size: 24px;
+          }
+        }
+
+        .sub-title {
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 21px;
+          text-align: center;
+          letter-spacing: 0.015em;
+          color: $color_iron;
+          padding-bottom: 32px;
+
+          @media screen and (max-width: $breakpoint_tablet_max) {
+            padding-top: 6px;
+            font-size: 14px;
+            letter-spacing: unset;
+            width: 100%;
+          }
+        }
+
+        .show-popup-kyc {
+          display: flex;
+          align-items: flex-end;
+          padding: 20px 0 32px 0;
+          color: $color_iron;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 21px;
+
+          @media screen and (max-width: $breakpoint_tablet_max) {
+            padding-top: 6px;
+            font-size: 14px;
+            width: 100%;
+          }
+
+          .ant-checkbox-inner {
+            height: 24px;
+            width: 24px;
+            border: 1px solid #516172;
+          }
+
+          .ant-checkbox + span {
+            padding-left: 16px;
+          }
+        }
+
+        .submit-kyc {
+          padding: 10px 24px;
+          border-radius: 3px;
+          background: $color_hibiscus;
+          width: 100%;
+          text-align: center;
+          height: 36px;
+          border: none;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 21px;
+          text-transform: uppercase;
+          letter-spacing: 0.015em;
+          color: $color_white;
+          cursor: pointer;
+        }
+
+        .skip-kyc {
+          padding-top: 20px;
+
+          &__link {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 21px;
+            text-transform: uppercase;
+            color: $color_white;
+            cursor: pointer;
+          }
+
+          @media screen and (max-width: $breakpoint_tablet_max) {
+            font-size: 14px;
+            line-height: 18px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,134 @@
+.notification {
+  background-color: $color_firefly_linear !important;
+  border-radius: 5px;
+
+  .app-dropdown {
+    padding: 20px;
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0.04em;
+    color: #b38465;
+    padding: 0 20px;
+  }
+}
+
+.notification-card {
+  border-radius: 5px;
+  width: 100%;
+  max-width: 394px;
+  height: auto;
+
+  @media screen and (max-width: $breakpoint_tablet_max) {
+    max-width: 375px;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    button {
+      height: 30px;
+      .button--left {
+        text-transform: none;
+      }
+    }
+  }
+  .group {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+
+    &:last-child {
+      border-bottom: unset;
+    }
+
+    .content {
+      width: 95%;
+
+      @media screen and (max-width: $breakpoint_tablet_max) {
+        width: 90%;
+      }
+
+      .name {
+        font-weight: 600;
+        color: #c1296a;
+      }
+
+      .price {
+        font-weight: 600;
+        color: #c1296a;
+      }
+
+      .currency {
+        font-weight: 600;
+        color: #c1296a;
+      }
+
+      .wallet {
+        font-weight: 600;
+        color: #c1296a;
+      }
+
+      .text {
+        white-space: normal !important;
+        width: 100%;
+        padding-top: 14px;
+        @include textEllipsis(2);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 0.005em;
+        color: $color_titan_white;
+      }
+
+      .sub-text {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        color: $color_rock_blue;
+        padding-top: 2px;
+        padding-bottom: 12px;
+
+        span:nth-child(2) {
+          margin-left: 4px;
+        }
+      }
+    }
+
+    .effect {
+      .dot {
+        background: #00b140;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .notification-empty-text {
+    padding: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.04em;
+    color: $color_titan_white;
+    padding-bottom: 4px;
+    text-align: center;
+  }
+
+  .infinite-scroll-component {
+    overflow: auto;
+    overflow-x: hidden !important;
+    max-height: 350px;
+    @include scrollbars();
+
+    @media screen and (max-width: $breakpoint_tablet_max) {
+      padding: 0px;
+    }
+  }
+}

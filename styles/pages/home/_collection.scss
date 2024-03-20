@@ -1,0 +1,142 @@
+.collection-home {
+  margin-top: 64px;
+
+  .collection-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title-collection {
+      font-weight: 700;
+      font-size: 28px;
+      color: #fff;
+    }
+
+    a {
+      color: #BCC7E3;
+    }
+  }
+
+  .collection-card {
+    margin-top: 30px;
+
+    .ant-row {
+      .ant-col {
+        margin-bottom: 44px;
+      }
+    }
+
+    .collection-content {
+      position: relative;
+
+      .collectionImg {
+        position: relative;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+          transition: transform .5s;
+
+          &:hover {
+
+            transition: transform .5s;
+            transform: scale(1.2);
+          }
+        }
+      }
+
+      .collection-info {
+        .content {
+          background: #060A13;
+          padding: 48px 16px 32px;
+          text-align: center;
+
+          .title {
+            font-weight: 700;
+            font-size: 18px;
+          }
+
+          .decs {
+            padding: 8px 0;
+          }
+        }
+      }
+
+      .avatar {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -30%);
+      }
+    }
+  }
+}
+
+.collection-page {
+  .collection-banner {
+    position: relative;
+
+    img {
+      width: 100%;
+      max-height: 440px;
+      object-fit: cover;
+
+    }
+
+    .avatar {
+      position: absolute;
+      bottom: 0;
+      right: 50%;
+      transform: translate(50%, 50%)
+    }
+  }
+
+  .collection-about {
+    text-align: center;
+
+    .title-collection-page {
+      font-weight: 700;
+      font-size: 28px;
+      color: #fff;
+      margin-top: 56px;
+    }
+
+    .address-collection {
+      .ant-typography {
+        color: #848C9C;
+        font-size: 14px;
+        border: 2px solid #26282C;
+        border-radius: 30px;
+        padding: 8px 24px;
+        max-width: 196px;
+        margin: auto;
+      }
+
+    }
+
+    .decs-collection {
+      max-width: 885px;
+      margin: 26px auto;
+    }
+  }
+
+  .collection-content {
+    .content-head {
+      display: flex;
+      justify-content: center;
+      padding-top: 24px;
+      border-top: 1px solid #26282C;
+
+      .content-head-item {
+        padding: 0 26px;
+        font-weight: 700;
+        font-size: 16px;
+        text-align: center;
+        .value {
+          color: #DD4460;
+        }
+      }
+    }
+  }
+}

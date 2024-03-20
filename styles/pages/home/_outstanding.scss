@@ -1,0 +1,72 @@
+.outstanding-home {
+  margin-top: 64px;
+
+  .title-outstanding {
+    font-weight: 700;
+    font-size: 28px;
+    color: #fff;
+  }
+
+  .outstanding-card {
+    margin-top: 30px;
+
+    .ant-row {
+      .ant-col {
+        @media only screen and (max-width: $breakpoint_tablet_md) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    .outstanding-content {
+      position: relative;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 410px;
+        object-fit: cover;
+        transition: transform .5s;
+
+       &:hover {
+
+        transition: transform .5s;
+        transform: scale(1.2);
+      }
+      }
+
+      .outstanding-info {
+        position: absolute;
+        left: 24px;
+        bottom: 24px;
+
+        .title {
+          font-size: 20px;
+          font-weight: 700;
+        }
+
+        .price {
+          padding: 5px 0;
+
+          .price-decs {
+            font-size: 20px;
+            font-weight: 700;
+          }
+
+          .price-item {
+            color: #DD4460;
+            background: rgba(221, 68, 96, 0.2);
+            padding: 5px;
+            border-radius: 2px;
+            margin-left: 8px;
+            font-weight: 700;
+          }
+        }
+
+        .edition {
+          font-weight: 700;
+          color: #848C9C;
+        }
+      }
+    }
+  }
+}

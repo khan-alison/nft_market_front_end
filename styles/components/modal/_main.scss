@@ -1,0 +1,20 @@
+@import './buy';
+@import './step';
+@import './wallet';
+@import './list_for_sale';
+@import './wrong-network-modal';
+@import './loading-metamask-modal';
+@import './metamask-notfound-modal';
+@import './kyc';
+
+.modal {
+  .modal-close-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 10;
+  }
+}

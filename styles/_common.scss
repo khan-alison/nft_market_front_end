@@ -1,0 +1,96 @@
+html,
+body {
+  font-size: 14px;
+  font-family: 'Poppins';
+  background: $color_mirage;
+  color: $color_white;
+  @include scrollbars();
+
+  #root {
+    height: 100%;
+
+    .App {
+      height: 100%;
+    }
+  }
+}
+
+.app-content {
+  min-height: calc(100vh - 195px - 118px - 33px - 110px);
+  padding-bottom: 20px;
+
+  .scroll-to-top {
+    display: none;
+  }
+
+  .scroll-to-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background: $color_white_0_2;
+    border-radius: 10px;
+
+    img {
+      height: 24px;
+      width: 24px;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1320px;
+  padding: 0 20px;
+  margin: auto;
+
+  @media only screen and (max-width: $breakpoint_laptop_max) {
+    padding: 0 24px;
+    max-width: $breakpoint_laptop_min;
+  }
+}
+
+.walletconnect-modal__mobile__toggle {
+  display: none !important;
+}
+
+.ant-tooltip {
+  .ant-tooltip-inner {
+    span {
+      display: block;
+      white-space: nowrap;
+      &:not(:last-child) {
+        &:after {
+          content: ',';
+        }
+      }
+    }
+  }
+}
+
+.auth-btn {
+  display: flex;
+  justify-content: center;
+  margin: 20px 10px;
+}
+
+.kyc-info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  &__item{
+    width: 50%;
+    color: #fff;
+    margin: auto;
+    text-align: start;
+    padding: 0 8rem;
+
+    .title {
+      font-weight: 600;
+      font-size: 1.25rem;
+      padding: 1rem;
+    }
+  }
+}
