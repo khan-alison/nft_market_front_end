@@ -4,7 +4,7 @@ import EthereumLogo from 'public/svg/ethereum_logo.svg';
 
 import connector from 'utils/connector';
 
-export const DEFAULT_RPC721 = "0xa751768ca19C804f24F4b6229D5c4930E1596de7" ;
+export const DEFAULT_RPC721 = "0x80dD4c33FC5db8338542e04652243149CffEaA0E" ;
 export const PAYMENT_TOKEN = "0x0000000000000000000000000000000000000000" ;
 
 export const STATUS_NFT = {
@@ -21,9 +21,10 @@ export enum SupportedChainId {
   ETH_MAINNET = 1,
   POLYGON = 80001,
   POLYGON_MAINNET = 137,
-  CVC_TESTNET =5555
+  CVC_TESTNET =5555,
+  HOLESKY_TESTNET=17000
 }
-export const SUPPORTED_CHAIN_IDS: SupportedChainId[] = [SupportedChainId.CVC_TESTNET];
+export const SUPPORTED_CHAIN_IDS: SupportedChainId[] = [SupportedChainId.CVC_TESTNET, SupportedChainId.HOLESKY_TESTNET];
 
 export const LIST_POLYGON_TESTNET = [
   // 'https://rpc-mumbai.maticvigil.com',
@@ -47,6 +48,7 @@ export const LIST_NETWORK_RPC_TESTNET: any = {
   [SupportedChainId.BSC]: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
   [SupportedChainId.CVC_TESTNET]: connector.randomRPCTestnet(LIST_CVC_TESTNET),
   [SupportedChainId.ETH]: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+  [SupportedChainId.HOLESKY_TESTNET]: 'https://ethereum-holesky.publicnode.com',
 };
 
 export const BRIDGE_WALLET_CONNECT_URL = 'https://pancakeswap.bridge.walletconnect.org';
@@ -145,6 +147,17 @@ export const CHAIN_INFO = {
     explorerName: 'Polygonscan',
     suffixKey: '_POL',
   },
+  HOLESKY_TESTNET: {
+    name: 'Holesky Testnet',
+    value: SupportedChainId.HOLESKY_TESTNET,
+    valueString: SupportedChainId.HOLESKY_TESTNET.toString(),
+    icon: EthereumLogo, // You can import a specific logo for Holesky if available
+    textWarning: 'Holesky - Testnet',
+    url: 'https://holesky.beaconcha.in',
+    suffixToken: 'ERC-20', // Assuming it uses the same token suffix as Ethereum
+    explorerName: 'HoleskyExplorer',
+    suffixKey: '_HOLESKY',
+  },
 };
 
 export const ETH_CHAIN_ID = CHAIN_INFO.ETHER.value;
@@ -153,6 +166,7 @@ export const POLYGON_CHAIN_ID = CHAIN_INFO.POLYGON.value;
 export const ETH_CHAIN_ID_TESTNET = CHAIN_INFO.ETHER_TESTNET.value;
 export const BSC_CHAIN_ID_TESTNET = CHAIN_INFO.BSC_TESTNET.value;
 export const POLYGON_CHAIN_ID_TESTNET = CHAIN_INFO.POLYGON_TESTNET.value;
+export const HOLESKY_CHAIN_ID_TESTNET = CHAIN_INFO.HOLESKY_TESTNET.value
 
 export const APP_NETWORKS_SUPPORT = {
   [ETH_CHAIN_ID]: {
@@ -232,6 +246,19 @@ export const APP_NETWORKS_SUPPORT = {
       },
       rpcUrls: [LIST_NETWORK_RPC_TESTNET[POLYGON_CHAIN_ID_TESTNET]],
       blockExplorerUrls: [CHAIN_INFO.POLYGON_TESTNET.url],
+    },
+  },
+  [HOLESKY_CHAIN_ID_TESTNET]: {
+    details: {
+      chainId: `0x${(+SupportedChainId.HOLESKY_TESTNET).toString(16)}`,
+      chainName: CHAIN_INFO.HOLESKY_TESTNET.name,
+      nativeCurrency: {
+        name: 'ETH',
+        symbol: 'ETH',
+        decimals: 18,
+      },
+      rpcUrls: [LIST_NETWORK_RPC_TESTNET[SupportedChainId.HOLESKY_TESTNET]],
+      blockExplorerUrls: [CHAIN_INFO.HOLESKY_TESTNET.url],
     },
   },
 };

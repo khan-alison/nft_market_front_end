@@ -79,7 +79,6 @@ const AppConnectWalletWrapper: FC<{
     const setUpAddress = async () => {
       if (account) {
         const wallet = new MetamaskService().getInstance();
-
         // check is admin
         const isAdmin = await handleCheckIsAdmin(wallet);
 
@@ -96,8 +95,7 @@ const AppConnectWalletWrapper: FC<{
 
     if (account && isConnectingWallet) {
       setUpAddress();
-      console.log("thu 2");
-      
+      console.log('thu 2');
     }
   }, [account, isConnectingWallet]);
 
@@ -264,7 +262,7 @@ const AppConnectWalletWrapper: FC<{
   return (
     <>
       {children}
-      <ModalWrongNetwork />
+      {/* <ModalWrongNetwork /> */}
       <ModalLogin />
       {/* {chekStatusKYC && authenticationToken && cancelKyc === false && !listKyc?.[address]?.showPopupKycAgain && (
         <ModalKyc />

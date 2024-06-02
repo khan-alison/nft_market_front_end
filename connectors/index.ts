@@ -114,6 +114,15 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     disableIcon: '/images/injected-binance-disabled.svg',
     href: null,
   },
+  HOLESKY_TESTNET: {
+    connector: injected, // Or any other appropriate connector
+    name: 'Holesky Testnet',
+    icon: '/path/to/holesky-icon.svg', // Replace with the actual icon path
+    disableIcon: '/path/to/holesky-disabled-icon.svg', // Replace with the actual disabled icon path
+    description: 'Connect to the Holesky Testnet',
+    href: null,
+    mobile: true, // Adjust based on your requirements
+  },
 };
 
 export const connectorsByName: any = {
@@ -123,4 +132,5 @@ export const connectorsByName: any = {
 
 export const NETWORK_URLS = {
   [SupportedChainId.CVC_TESTNET]: LIST_CVC_TESTNET[0],
+  [SupportedChainId.HOLESKY_TESTNET]: LIST_NETWORK_RPC_TESTNET[SupportedChainId.HOLESKY_TESTNET],
 };

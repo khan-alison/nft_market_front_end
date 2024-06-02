@@ -29,24 +29,29 @@ const PaymentModal = ({ isModalPayment, handleClosePayment, dataNftDetail, setIs
   const dispatch = useAppDispatch();
   const { address } = useAppSelector(selectedAddress.getAddress);
   const { library } = useWeb3React();
-  const { onMintNFT, loadingMint } = useMintNFT()
+  const { onMintNFT, loadingMint } = useMintNFT();
 
   const handleApproveMinted = async (data?: any, values?: any) => {
     const wallet = new MetamaskService().getInstance();
+    console.log('address', address);
+    console.log('library', library);
+    console.log('data', data);
+
     await wallet.mintNFT({
       account: address,
       library,
       data,
-      onCallback: (response: any) => onMintNFT({
-        id: dataNftDetail[0]?._id,
-        totalSupply: 1,
-        hash: response?.hash
-      }),
+      onCallback: (response: any) =>
+        onMintNFT({
+          id: dataNftDetail[0]?._id,
+          totalSupply: 1,
+          hash: response?.hash,
+        }),
     });
   };
 
   const handleSumbit = async (values: any) => {
-    setIsModalLoading(true)
+    setIsModalLoading(true);
     const param: any = {
       data: {
         collection: DEFAULT_RPC721,
@@ -57,27 +62,24 @@ const PaymentModal = ({ isModalPayment, handleClosePayment, dataNftDetail, setIs
     };
 
     await handleApproveMinted(param?.data, values);
-    setIsModalLoading(false)
-    handleClosePayment()
-
-  }
+    setIsModalLoading(false);
+    handleClosePayment();
+  };
   const handleSetMaxQuantity = (setFieldValue: any, field: string) => () => setFieldValue(field, 0);
 
   return (
-    <Modal
-      visible={isModalPayment}
-      onClose={handleClosePayment}>
+    <Modal visible={isModalPayment} onClose={handleClosePayment}>
       <AppLoading loading={loadingMint || false} src={LoadingNFTIcon}>
-
-        <Title level={4} className='payment-title'>Mint NFT</Title>
+        <Title level={4} className='payment-title'>
+          Mint NFT
+        </Title>
         <div className='modal-payment'>
           <Formik
             onSubmit={handleSumbit}
             initialValues={[]}
-          // validationSchema={}
+            // validationSchema={}
           >
             {({ setFieldValue, values, errors }) => {
-
               return (
                 <Row>
                   <Form className='payment-content'>
@@ -85,7 +87,7 @@ const PaymentModal = ({ isModalPayment, handleClosePayment, dataNftDetail, setIs
                       <span className='payment-item__title'>Item</span>
                       <div className='payment-item-content'>
                         <p>From the Other worlds series.﻿( Original + NFT ) #1</p>
-                        <Avatar shape="square" size={64} icon={<img src={dataNftDetail[0]?.ipfsImage} alt='' />} />
+                        <Avatar shape='square' size={64} icon={<img src={dataNftDetail[0]?.ipfsImage} alt='' />} />
                       </div>
                     </Col>
                     {/* <Col xs={24} className='list-for-sale-modal-form'>
@@ -140,11 +142,10 @@ const PaymentModal = ({ isModalPayment, handleClosePayment, dataNftDetail, setIs
               );
             }}
           </Formik>
-
         </div>
       </AppLoading>
     </Modal>
-  )
-}
+  );
+};
 
-export default PaymentModal
+export default PaymentModal;

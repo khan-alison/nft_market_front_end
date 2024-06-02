@@ -158,8 +158,8 @@ export const useMintNFT = () => {
   const router = useRouter();
 
   const handleMintNFT = useMutation(
+    
     async (params: any) => {
-
       const paramMint = {
         totalSupply: params?.totalSupply, hash:params?.hash
       }
