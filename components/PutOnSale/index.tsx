@@ -58,6 +58,8 @@ const PutOnSaleModal = ({
   };
 
   const handleApproveNFT = async () => {
+    console.log('approve');
+
     setIsModalLoading(true);
 
     try {
@@ -84,7 +86,7 @@ const PutOnSaleModal = ({
         }),
     });
   };
-  const handleSumbit = async (values: any) => {
+  const handleSubmit = async (values: any) => {
     setIsModalLoading(true);
     const originalPrice = Number(values?.price);
     const decimal = 10 ** 18;
@@ -109,7 +111,7 @@ const PutOnSaleModal = ({
 
     if (library && address && !isApprovedListForSale) {
       console.log('here');
-      
+
       handleCheckApprovedForAll();
     }
   }, [library, address]);
@@ -121,7 +123,7 @@ const PutOnSaleModal = ({
           Put On Sale NFT
         </Title>
         <div className='modal-payment'>
-          <Formik onSubmit={handleSumbit} initialValues={{ [PRICE]: 0 }} validationSchema={getPutOnSaleSchema(t)}>
+          <Formik onSubmit={handleSubmit} initialValues={{ [PRICE]: 0 }} validationSchema={getPutOnSaleSchema(t)}>
             {({ setFieldValue, values, errors }) => {
               return (
                 <Row>

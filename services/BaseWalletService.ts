@@ -336,7 +336,6 @@ export default class BaseWalletService {
     onError?: () => void;
   }) => {
     const contract = getContract(process.env.NEXT_PUBLIC_APP_PROXY_ADDRESS || '', NFTMarketplace.abi, library, account);
-
     try {
       const response = await contract.createOrder(
         data.collection,
@@ -346,6 +345,7 @@ export default class BaseWalletService {
         data.price,
       );
       console.log(response);
+      console.log("sucess")
 
       if (response?.hash) {
         const receipt = await response.wait();
@@ -357,6 +357,7 @@ export default class BaseWalletService {
       }
     } catch (error: any) {
       console.log(error);
+      console.log("errr")
       if (WALLET_STATUS.CANCEL_METAMASK === error?.code) {
         onCancelMetamask && onCancelMetamask();
       } else {

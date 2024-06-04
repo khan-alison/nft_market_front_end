@@ -4,7 +4,7 @@ import EthereumLogo from 'public/svg/ethereum_logo.svg';
 
 import connector from 'utils/connector';
 
-export const DEFAULT_RPC721 = "0x80dD4c33FC5db8338542e04652243149CffEaA0E" ;
+export const DEFAULT_RPC721 = "0x4Ce98Fc6e30F49e1C65834e9c557FD2Aa856BC60" ;
 export const PAYMENT_TOKEN = "0x0000000000000000000000000000000000000000" ;
 
 export const STATUS_NFT = {
