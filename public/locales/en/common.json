@@ -185,6 +185,7 @@
     "S10": "You buy NFT successful",
     "S11": "Your information image verified ! Do you want to submit KYC ?",
     "S12": "Submit KYC successful",
+    "S13": "You don't have enough token to transaction.",
     "quote": "I have just discovered an interesting event named {{eventName}}. You guys can check it out at"
   },
   "home": {

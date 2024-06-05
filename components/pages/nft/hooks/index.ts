@@ -50,9 +50,7 @@ export const useGetListNFTs = () => {
   const [listNfts, setListNfts] = useState([]);
 
   const handleGetListNFTs = async () => {
-
     try {
-
       const response = await nftServices.handleGetList();
       return response;
     } catch (error) {
@@ -86,9 +84,7 @@ export const useGetListOwnerNFTs = () => {
   const [listNfts, setListNfts] = useState([]);
 
   const handleGetListOwnerNFTs = async () => {
-
     try {
-
       const response = await nftServices.handleGetOwnerListNft();
       return response;
     } catch (error) {
@@ -151,18 +147,18 @@ export const useGetNftDetail = (id: string) => {
   return {
     loading: isLoading,
     useQueryGetDetailNft: useQueryGetDetailNft,
-    data: useQueryGetDetailNft.data
+    data: useQueryGetDetailNft.data,
   };
 };
 export const useMintNFT = () => {
   const router = useRouter();
 
   const handleMintNFT = useMutation(
-    
     async (params: any) => {
       const paramMint = {
-        totalSupply: params?.totalSupply, hash:params?.hash
-      }
+        totalSupply: params?.totalSupply,
+        hash: params?.hash,
+      };
       try {
         const response = await nftServices.handleMintNft(params?.id, paramMint);
         return { response };
@@ -173,10 +169,9 @@ export const useMintNFT = () => {
     {
       onSuccess: (res: any) => {
         if (checkSusscessRequest(res?.response)) {
-
           showMessage(TYPE_CONSTANTS.MESSAGE.SUCCESS, 'message.S6');
           // router.push(renderURLs.NFT_DETAIL(idNft));
-          setTimeout(() => router.reload(),1000)
+          setTimeout(() => router.reload(), 1000);
         }
       },
     },
@@ -193,10 +188,10 @@ export const usePutOnSaleNFT = () => {
 
   const handlePutOnSaleNFT = useMutation(
     async (params: any) => {
-
       const paramPutOnSale = {
-        price: params?.price, hashPutOnSale:params?.hashPutOnSale
-      }
+        price: params?.price,
+        hashPutOnSale: params?.hashPutOnSale,
+      };
       try {
         const response = await nftServices.handlePutOnSaleNft(params?.id, paramPutOnSale);
         return { response };
@@ -206,11 +201,12 @@ export const usePutOnSaleNFT = () => {
     },
     {
       onSuccess: (res: any) => {
-        if (checkSusscessRequest(res?.response)) {
+        console.log('res', res);
 
+        if (checkSusscessRequest(res?.response)) {
           showMessage(TYPE_CONSTANTS.MESSAGE.SUCCESS, 'message.S7');
           // router.push(renderURLs.NFT_DETAIL(idNft));
-          setTimeout(() => router.reload(),1000)
+          setTimeout(() => router.reload(), 1000);
         }
       },
     },
@@ -227,7 +223,6 @@ export const useBuyNFT = () => {
 
   const handleBuyNFT = useMutation(
     async (params: any) => {
-
       try {
         const response = await nftServices.handleBuyNft(params);
         return { response };
@@ -238,10 +233,9 @@ export const useBuyNFT = () => {
     {
       onSuccess: (res: any) => {
         if (checkSusscessRequest(res?.response)) {
-
           showMessage(TYPE_CONSTANTS.MESSAGE.SUCCESS, 'message.S10');
           // router.push(renderURLs.NFT_DETAIL(idNft));
-          setTimeout(() => router.reload(),1000)
+          setTimeout(() => router.reload(), 1000);
         }
       },
     },
@@ -252,7 +246,6 @@ export const useBuyNFT = () => {
     loadingBuyNFT: handleBuyNFT.isLoading,
   };
 };
-
 
 export const useGetOwned = (id: string, params?: any, options?: any) => {
   const [data, setData] = useState([]);
@@ -485,7 +478,7 @@ export const useCreateTransaction = () => {
       } else {
         onError && onError();
       }
-    } catch (error) { }
+    } catch (error) {}
   };
 
   return {
@@ -507,7 +500,7 @@ export const useUpdateTransaction = () => {
         }
       } else {
       }
-    } catch (error) { }
+    } catch (error) {}
   };
 
   return {

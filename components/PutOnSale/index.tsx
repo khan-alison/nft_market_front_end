@@ -58,8 +58,6 @@ const PutOnSaleModal = ({
   };
 
   const handleApproveNFT = async () => {
-    console.log('approve');
-
     setIsModalLoading(true);
 
     try {
@@ -104,14 +102,9 @@ const PutOnSaleModal = ({
     setIsModalLoading(false);
     handleClosePutOnSale();
   };
-  console.log('isApprovedListForSale: ', isApprovedListForSale);
-
+  
   useEffect(() => {
-    console.log('isApprovedListForSale', !isApprovedListForSale);
-
     if (library && address && !isApprovedListForSale) {
-      console.log('here');
-
       handleCheckApprovedForAll();
     }
   }, [library, address]);
