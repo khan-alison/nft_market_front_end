@@ -4,8 +4,8 @@ import EthereumLogo from 'public/svg/ethereum_logo.svg';
 
 import connector from 'utils/connector';
 
-export const DEFAULT_RPC721 = "0x4Ce98Fc6e30F49e1C65834e9c557FD2Aa856BC60" ;
-export const PAYMENT_TOKEN = "0x0000000000000000000000000000000000000000" ;
+export const DEFAULT_RPC721 = "0xdFe59eFc8543fb79f5699600c6687bd4bca7468C" ;
+export const PAYMENT_TOKEN = "0x6d8AC4b62F8DF7e7E51dd4A09b413c6ED8bD75dc" ;
 
 export const STATUS_NFT = {
   MINTED: 'MINTED',

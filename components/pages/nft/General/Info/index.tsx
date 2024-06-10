@@ -75,58 +75,80 @@ const Info = ({ dataNftDetail }: any) => {
   const handleClosePutOnSale = () => setIsModalPutOnSale(false);
 
   const handleBuy = async () => {
-    try {
-      setIsModalLoading(true);
+    // try {
+    //   setIsModalLoading(true);
 
-      const orderId = dataNftDetail[0]?.orderId;
-      const priceInEther = dataNftDetail[0]?.price; // Assuming price is in Ether
-      const priceInWei = ethers.utils.parseUnits(priceInEther.toString(), 'ether'); // Convert to Wei
+    //   const orderId = dataNftDetail[0]?.orderId;
+    //   const priceInEther = dataNftDetail[0]?.price;
+    //   const priceInWei = ethers.utils.parseUnits(priceInEther.toString(), 'ether'); // Convert to Wei
 
-      // Create a new instance of MetamaskService
-      const wallet = new MetamaskService().getInstance();
+    //   // Create a new instance of MetamaskService
+    //   const wallet = new MetamaskService().getInstance();
 
-      // Check balance for native token (ETH in this case)
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const signer = provider.getSigner();
-      const balance = await signer.getBalance();
+    //   // Check balance for native token (ETH in this case)
+    //   const provider = new ethers.providers.Web3Provider(window.ethereum);
+    //   const signer = provider.getSigner();
+    //   const balance = await signer.getBalance();
 
-      console.log('ETH balance:', balance.toString());
+    //   console.log('priceInWei', priceInWei);
+    //   console.log('ETH balance:', balance.toString());
 
-      if (balance.lt(priceInWei)) {
-        showMessage(TYPE_CONSTANTS.MESSAGE.ERROR, 'Insufficient funds for gas + value');
-        setIsModalLoading(false);
-        return;
-      }
+    //   // if (balance.lt(priceInWei)) {
+    //   //   showMessage(TYPE_CONSTANTS.MESSAGE.ERROR, 'Insufficient funds for gas + value');
+    //   //   setIsModalLoading(false);
+    //   //   return;
+    //   // }
 
-      await wallet.buyNFT({
-        account: address,
-        library,
-        data: {
-          orderId,
-          buyAmount: 1,
-          price: priceInWei.toString(),
-        },
-        onCallback: (response: any) => {
-          console.log('buyNFT callback response:', response);
-          onBuyNFT({
-            nftId: dataNftDetail[0]?._id,
-            quantity: 1,
-            price: priceInWei.toString(),
-            fromAddress: address,
-            transactionHash: response.hash,
-            status: 'SUCCESS',
-          });
-        },
-      });
+    //   await wallet.buyNFT({
+    //     account: address,
+    //     library,
+    //     data: {
+    //       orderId,
+    //       buyAmount: 1,
+    //       price: priceInWei.toString(),
+    //     },
+    //     onCallback: (response: any) => {
+    //       console.log('buyNFT callback response:', response);
+    //       onBuyNFT({
+    //         nftId: dataNftDetail[0]?._id,
+    //         quantity: 1,
+    //         price: priceInWei.toString(),
+    //         fromAddress: address,
+    //         transactionHash: response.hash,
+    //         status: 'SUCCESS',
+    //       });
+    //     },
+    //   });
 
-      console.log('buyNFT completed');
-    } catch (error: any) {
-      console.error('Error in buyNFT:', error);
-      showMessage(TYPE_CONSTANTS.MESSAGE.ERROR, 'An error occurred during the transaction');
-    } finally {
-      console.log('Closing modal...');
-      setIsModalLoading(false);
-    }
+    //   console.log('buyNFT completed');
+    // } catch (error: any) {
+    //   console.error('Error in buyNFT:', error);
+    //   showMessage(TYPE_CONSTANTS.MESSAGE.ERROR, 'An error occurred during the transaction');
+    // } finally {
+    //   console.log('Closing modal...');
+    //   setIsModalLoading(false);
+    // }
+    setIsModalLoading(true);
+    await wallet.buyNFT({
+      account: address,
+      library,
+      data: {
+        orderId: dataNftDetail[0]?.orderId,
+        buyAmount: 1,
+        price: dataNftDetail[0]?.price,
+      },
+      onCallback: (response: any) =>
+        onBuyNFT({
+          nftId: dataNftDetail[0]?._id,
+          quantity: 1,
+          price: dataNftDetail[0]?.price,
+          fromAddress: address,
+          transactionHash: response.hash,
+          status: 'SUCCESS',
+        }),
+    });
+    setIsModalLoading(false);
+
   };
 
   const checkStatus =
