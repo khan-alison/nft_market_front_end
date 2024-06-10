@@ -29,7 +29,12 @@ interface PropsPutOnSale {
 const { Title } = Typography;
 const { PRICE } = LIST_FOR_SALE_FIELD;
 
-const PutOnSaleModal = ({isModalPutOnSale, handleClosePutOnSale, dataNftDetail, setIsModalLoading }: PropsPutOnSale) => {
+const PutOnSaleModal = ({
+  isModalPutOnSale,
+  handleClosePutOnSale,
+  dataNftDetail,
+  setIsModalLoading,
+}: PropsPutOnSale) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const [isApprovedListForSale, setIsApproveListForSale] = useState(false);
@@ -37,7 +42,7 @@ const PutOnSaleModal = ({isModalPutOnSale, handleClosePutOnSale, dataNftDetail, 
 
   const { address } = useAppSelector(selectedAddress.getAddress);
   const { library } = useWeb3React();
-  const { onPutOnSaleNFT, loadingPutOnSale } = usePutOnSaleNFT()
+  const { onPutOnSaleNFT, loadingPutOnSale } = usePutOnSaleNFT();
 
   const handleCheckApprovedForAll = async () => {
     try {
@@ -61,11 +66,9 @@ const PutOnSaleModal = ({isModalPutOnSale, handleClosePutOnSale, dataNftDetail, 
         library,
         approved: true,
       });
-      setIsApproveListForSale(response)
-    setIsModalLoading(false);
-
-    } catch (error) {
-    }
+      setIsApproveListForSale(response);
+      setIsModalLoading(false);
+    } catch (error) {}
   };
 
   const handleApprovePutOnSale = async (data?: any, realPrice?: any) => {
@@ -73,14 +76,15 @@ const PutOnSaleModal = ({isModalPutOnSale, handleClosePutOnSale, dataNftDetail, 
       account: address,
       library,
       data,
-      onCallback: (response: any) => onPutOnSaleNFT({
-        id: dataNftDetail[0]?._id,
-        price: Number(realPrice),
-        hashPutOnSale: response?.hash
-      }),
+      onCallback: (response: any) =>
+        onPutOnSaleNFT({
+          id: dataNftDetail[0]?._id,
+          price: Number(realPrice),
+          hashPutOnSale: response?.hash,
+        }),
     });
   };
-  const handleSumbit = async (values: any) => {
+  const handleSubmit = async (values: any) => {
     setIsModalLoading(true);
     const originalPrice = Number(values?.price);
     const decimal = 10 ** 18;
@@ -92,14 +96,13 @@ const PutOnSaleModal = ({isModalPutOnSale, handleClosePutOnSale, dataNftDetail, 
       amount: 1,
       paymentToken: PAYMENT_TOKEN,
       price: realPrice,
-    }
-    await handleApprovePutOnSale(data, data?.price)
+    };
+    await handleApprovePutOnSale(data, data?.price);
 
-    setIsModalLoading(false)
-    handleClosePutOnSale()
+    setIsModalLoading(false);
+    handleClosePutOnSale();
   };
-  console.log("isApprovedListForSale: ", isApprovedListForSale);
-
+  
   useEffect(() => {
     if (library && address && !isApprovedListForSale) {
       handleCheckApprovedForAll();
@@ -107,19 +110,14 @@ const PutOnSaleModal = ({isModalPutOnSale, handleClosePutOnSale, dataNftDetail, 
   }, [library, address]);
 
   return (
-    <Modal
-      visible={isModalPutOnSale}
-      onClose={handleClosePutOnSale}>
+    <Modal visible={isModalPutOnSale} onClose={handleClosePutOnSale}>
       <AppLoading loading={loadingPutOnSale || false} src={LoadingNFTIcon}>
-        <Title level={4} className='payment-title'>Put On Sale NFT</Title>
+        <Title level={4} className='payment-title'>
+          Put On Sale NFT
+        </Title>
         <div className='modal-payment'>
-          <Formik
-            onSubmit={handleSumbit}
-            initialValues={{ [PRICE]: 0 }}
-            validationSchema={getPutOnSaleSchema(t)}
-          >
+          <Formik onSubmit={handleSubmit} initialValues={{ [PRICE]: 0 }} validationSchema={getPutOnSaleSchema(t)}>
             {({ setFieldValue, values, errors }) => {
-
               return (
                 <Row>
                   <Form className='payment-content'>
@@ -127,10 +125,10 @@ const PutOnSaleModal = ({isModalPutOnSale, handleClosePutOnSale, dataNftDetail, 
                       <span className='payment-item__title'>Item</span>
                       <div className='payment-item-content'>
                         <p>From the Other worlds series.﻿( Original + NFT ) #1</p>
-                        <Avatar shape="square" size={64} icon={<img src={dataNftDetail[0]?.ipfsImage} alt='' />} />
+                        <Avatar shape='square' size={64} icon={<img src={dataNftDetail[0]?.ipfsImage} alt='' />} />
                       </div>
                     </Col>
-                    {isApprovedListForSale &&
+                    {isApprovedListForSale && (
                       <Col xs={24} className='list-for-sale-modal-form'>
                         <FormItem
                           containerClassName='payment-form__input'
@@ -141,7 +139,8 @@ const PutOnSaleModal = ({isModalPutOnSale, handleClosePutOnSale, dataNftDetail, 
                           name={PRICE}
                           label={t('nft_detail.txt_rfs_price')}
                         />
-                      </Col>}
+                      </Col>
+                    )}
                     <Col xs={24} className='payment-item'>
                       <span className='payment-item__title'>Subtotal</span>
                       <div className='payment-item__price'>
@@ -155,31 +154,20 @@ const PutOnSaleModal = ({isModalPutOnSale, handleClosePutOnSale, dataNftDetail, 
                       </div>
                     </Col>
                     <div className='payment-btn'>
-                      {isApprovedListForSale &&
-                        <AppButton
-                          htmlType='submit'
-                          text={'Put On Sale'}
-                          variant='primary'
-                        />
-                      }
-                      {!isApprovedListForSale &&
-                        <AppButton
-                          text={'Approve'}
-                          variant='secondary'
-                          onClick={handleApproveNFT}
-                        />
-                      }
+                      {isApprovedListForSale && <AppButton htmlType='submit' text={'Put On Sale'} variant='primary' />}
+                      {!isApprovedListForSale && (
+                        <AppButton text={'Approve'} variant='secondary' onClick={handleApproveNFT} />
+                      )}
                     </div>
                   </Form>
                 </Row>
               );
             }}
           </Formik>
-
         </div>
       </AppLoading>
     </Modal>
-  )
-}
+  );
+};
 
-export default PutOnSaleModal
+export default PutOnSaleModal;

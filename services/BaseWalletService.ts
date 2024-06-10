@@ -258,7 +258,7 @@ export default class BaseWalletService {
       if (response?.hash) {
         const receipt = await response.wait();
         if (receipt?.status) {
-          onCallback && onCallback({ hash: response.hash })
+          onCallback && onCallback({ hash: response.hash });
         } else {
           showMessage(TYPE_CONSTANTS.MESSAGE.ERROR, 'message.E22');
         }
@@ -269,7 +269,6 @@ export default class BaseWalletService {
       if (WALLET_STATUS.CANCEL_METAMASK === error?.code) {
         onCancelMetamask && onCancelMetamask();
       } else {
-
         onContractError && onContractError({ hash: response?.hash, status: FAILED, message: JSON.stringify(error) });
         onServerError && onServerError();
       }
@@ -292,15 +291,20 @@ export default class BaseWalletService {
     onCallback?: (hash: any) => void;
     onError?: () => void;
   }) => {
-
+    console.log('process.env.NEXT_PUBLIC_APP_PROXY_ADDRESS',process.env.NEXT_PUBLIC_APP_PROXY_ADDRESS);
+    
     const contract = getContract(process.env.NEXT_PUBLIC_APP_PROXY_ADDRESS || '', NFTMarketplace.abi, library, account);
 
+    console.log('(data.collection, data.id, data.amount, data.uri)',data);
+    
     try {
       const response = await contract.mint(data.collection, data.id, data.amount, data.uri);
+      console.log('response', response);
+
       if (response?.hash) {
         const receipt = await response.wait();
         if (receipt?.status) {
-          onCallback && onCallback({ hash: response.hash })
+          onCallback && onCallback({ hash: response.hash });
         } else {
           showMessage(TYPE_CONSTANTS.MESSAGE.ERROR, 'message.E22');
         }
@@ -309,7 +313,7 @@ export default class BaseWalletService {
       if (WALLET_STATUS.CANCEL_METAMASK === error?.code) {
         onCancelMetamask && onCancelMetamask();
       } else {
-        console.log(error)
+        console.log(error);
         onError && onError();
       }
     }
@@ -331,24 +335,29 @@ export default class BaseWalletService {
     onCallback?: (hash?: any) => void;
     onError?: () => void;
   }) => {
-
     const contract = getContract(process.env.NEXT_PUBLIC_APP_PROXY_ADDRESS || '', NFTMarketplace.abi, library, account);
-
     try {
-
-      const response = await contract.createOrder(data.collection, data.tokenId, data.amount, data.paymentToken, data.price);
+      const response = await contract.createOrder(
+        data.collection,
+        data.tokenId,
+        data.amount,
+        data.paymentToken,
+        data.price,
+      );
       console.log(response);
+      console.log("sucess")
 
       if (response?.hash) {
         const receipt = await response.wait();
         if (receipt?.status) {
-          onCallback && onCallback({ hash: response.hash })
+          onCallback && onCallback({ hash: response.hash });
         } else {
           showMessage(TYPE_CONSTANTS.MESSAGE.ERROR, 'message.E22');
         }
       }
     } catch (error: any) {
-      console.log(error)
+      console.log(error);
+      console.log("errr")
       if (WALLET_STATUS.CANCEL_METAMASK === error?.code) {
         onCancelMetamask && onCancelMetamask();
       } else {
@@ -370,13 +379,10 @@ export default class BaseWalletService {
     onError?: () => void;
     approved?: boolean;
   }) => {
-
     const contract = getContract(DEFAULT_RPC721 || '', Erc721ABI.output.abi, library, account);
 
     try {
-
       await contract.setApprovalForAll(process.env.NEXT_PUBLIC_APP_PROXY_ADDRESS, approved);
-
     } catch (error: any) {
       console.log(error);
 
@@ -401,14 +407,19 @@ export default class BaseWalletService {
     onCallback?: (hash?: any) => void;
     onError?: () => void;
   }) => {
-
     const contract = getContract(DEFAULT_RPC721 || '', Erc721ABI.output.abi, library, account);
 
     try {
+      console.log('process.env.NEXT_PUBLIC_APP_PROXY_ADDRESS', process.env.NEXT_PUBLIC_APP_PROXY_ADDRESS);
 
       const response = await contract.isApprovedForAll(account, process.env.NEXT_PUBLIC_APP_PROXY_ADDRESS);
+
+      console.log('NEXT_PUBLIC_APP_PROXY_ADDRESS',response);
+      
       return response;
     } catch (error: any) {
+      console.log('error',error);
+      
       if (WALLET_STATUS.CANCEL_METAMASK === error?.code) {
         onCancelMetamask && onCancelMetamask();
       } else {
@@ -417,7 +428,7 @@ export default class BaseWalletService {
     }
   };
 
-  // CANCEL SALE ORDER 
+  // CANCEL SALE ORDER
   cancelSaleOrder = async ({
     account,
     library,
@@ -433,13 +444,11 @@ export default class BaseWalletService {
     onCallback?: (hash?: any) => void;
     onError?: () => void;
   }) => {
-
     const contract = getContract(process.env.NEXT_PUBLIC_APP_PROXY_ADDRESS || '', NFTMarketplace.abi, library, account);
 
     try {
       const response = await contract.cancelOrder(data.id);
-      console.log("cancelOrder: ", response);
-
+      console.log('cancelOrder: ', response);
     } catch (error: any) {
       if (WALLET_STATUS.CANCEL_METAMASK === error?.code) {
         onCancelMetamask && onCancelMetamask();
@@ -557,5 +566,4 @@ export default class BaseWalletService {
       }
     }
   };
-
 }
